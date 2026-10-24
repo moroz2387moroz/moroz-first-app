@@ -1,4 +1,5 @@
 import { Component } from "react";
+import styled from "styled-components";
 
 import AppInfo from "../app-info/app-info";
 import SearchPanel from "../search-panel/search-panel";
@@ -6,7 +7,12 @@ import AppFilter from "../app-filter/app-filter";
 import EmployeesList from "../employees-list/employees-list";
 import EmployeesAddForm from "../employees-add-form/employees-add-form";
 
-import "./app.css";
+// import "./app.css";
+
+const AppWrap = styled.div`
+  margin: 0 auto;
+  max-width: 1000px;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -99,7 +105,7 @@ class App extends Component {
     const visibleData = this.filterPost(this.searchEmp(data, term), filter);
 
     return (
-      <div className="app">
+      <AppWrap>
         <AppInfo employees={employees} increased={increased} />
 
         <div className="search-panel">
@@ -113,7 +119,7 @@ class App extends Component {
           onToggleProp={this.onToggleProp}
         />
         <EmployeesAddForm onAdd={this.addItem} />
-      </div>
+      </AppWrap>
     );
   }
 }

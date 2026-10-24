@@ -1,4 +1,9 @@
-import "./app-filter.css";
+// import "./app-filter.css";
+import styled from "styled-components";
+
+const BtsGroup = styled.div`
+  margin-top: 20px;
+`;
 
 const AppFilter = (props) => {
   const btsData = [
@@ -21,7 +26,7 @@ const AppFilter = (props) => {
       </button>
     );
   });
-  return <div className="btn-group">{bts}</div>;
+  return <BtsGroup>{bts}</BtsGroup>;
 };
 
 export default AppFilter;

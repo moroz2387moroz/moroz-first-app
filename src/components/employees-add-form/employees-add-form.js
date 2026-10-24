@@ -1,6 +1,25 @@
 import { Component } from "react";
 
-import "./employees-add-form.css";
+import styled from "styled-components";
+// import "./employees-add-form.css";
+
+const AppAddForm = styled.div`
+  margin-top: 30px;
+  padding: 25px;
+  background-color: #3d5a80;
+  border-radius: 4px;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.15);
+  color: whitesmoke;
+
+  form {
+    margin-top: 20px;
+  }
+
+  input {
+    width: 350px;
+    margin-right: 20px;
+  }
+`;
 
 class EmployeesAddForm extends Component {
   constructor(props) {
@@ -38,9 +57,9 @@ class EmployeesAddForm extends Component {
   render() {
     const { name, salary } = this.state;
     return (
-      <div className="app-add-form">
+      <AppAddForm>
         <h3>Добавьте нового сотрудника</h3>
-        <form className="add-form d-flex" onSubmit={this.onSubmit}>
+        <form className="d-flex" onSubmit={this.onSubmit}>
           <input
             type="text"
             className="form-control new-post-label"
@@ -64,7 +83,7 @@ class EmployeesAddForm extends Component {
             Добавить
           </button>
         </form>
-      </div>
+      </AppAddForm>
     );
   }
 }
